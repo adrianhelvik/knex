@@ -770,11 +770,7 @@ declare namespace Knex {
     ): QueryBuilder<TRecord, TResult>;
 
     // Aggregation
-    count: AsymmetricAggregation<
-      TRecord,
-      TResult,
-      Lookup<ResultTypes.Registry, 'Count', number | string>
-    >;
+    count: () => Promise<{ count: string }>;
     countDistinct: AsymmetricAggregation<
       TRecord,
       TResult,
